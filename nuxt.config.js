@@ -12,6 +12,12 @@ export default {
   server: {
     host: "0.0.0.0"
   },
+  serverMiddleware: [
+    {
+      path: "/api",
+      handler: "~/api/index.js"
+    }
+  ],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "nuxtapp",
@@ -30,7 +36,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/api-client.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

@@ -7,9 +7,10 @@ export default {
   //     };
   //   },
   methods: {
-    sayGoodBye() {
+    async sayGoodBye() {
       //   this.message = "good bye";
-      this.putGreeting("goodBye2");
+      const result = await this.$api.getDate();
+      this.putGreeting((await result.json()).date);
     },
     ...mapMutations({
       putGreeting: "putGreeting"
